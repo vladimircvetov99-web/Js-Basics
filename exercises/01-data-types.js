@@ -24,7 +24,13 @@ function getType(value) {
  *          toNumber("abc")  → 0
  */
 function toNumber(str) {
-  // твой код здесь
+  const result = parseFloat(str);
+
+  if (isNaN(result)) {
+    return 0;
+  } else {
+    return result;
+  }
 }
 
 /**
@@ -38,7 +44,18 @@ function toNumber(str) {
  *          isEmpty(1)    → false
  */
 function isEmpty(value) {
-  // твой код здесь
+  if (
+    value === null ||
+    value === undefined ||
+    value === "" ||
+    value === 0 ||
+    value === false ||
+    Number.isNaN(value)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -50,7 +67,7 @@ function isEmpty(value) {
  *          toBoolean("")  → false
  */
 function toBoolean(value) {
-  // твой код здесь
+  return Boolean(value);
 }
 
 /**
@@ -62,7 +79,11 @@ function toBoolean(value) {
  *          getLength(123)      → -1
  */
 function getLength(value) {
-  // твой код здесь
+  if (typeof value === "string") {
+    return value.length;
+  } else {
+    return -1;
+  }
 }
 
 /**
@@ -72,7 +93,7 @@ function getLength(value) {
  *          concat(1, 2)             → "1 2"
  */
 function concat(a, b) {
-  // твой код здесь
+  return a + " " + b;
 }
 
 module.exports = { getType, toNumber, isEmpty, toBoolean, getLength, concat };
