@@ -12,7 +12,7 @@
  * Примеры: getYear(new Date("2024-03-15")) → 2024
  */
 function getYear(date) {
-  // твой код здесь
+  return date.getFullYear();
 }
 
 /**
@@ -23,7 +23,16 @@ function getYear(date) {
  *          formatDate(new Date("2024-12-31")) → "31.12.2024"
  */
 function formatDate(date) {
-  // твой код здесь
+  var day = date.getDate();
+  if (day < 10) day = "0" + day;
+
+  var month = date.getMonth() + 1;
+  if (month < 10) month = "0" + month;
+
+  var year = date.getFullYear();
+  if (year < 10) year = "0" + year;
+
+  return day + "." + month + "." + year;
 }
 
 /**
@@ -34,7 +43,9 @@ function formatDate(date) {
  *          daysBetween(new Date("2024-01-11"), new Date("2024-01-01")) → 10
  */
 function daysBetween(date1, date2) {
-  // твой код здесь
+  var oneDay = 1000 * 60 * 60 * 24;
+  var diff = Math.abs(date1 - date2);
+  return Math.floor(diff / oneDay);
 }
 
 /**
@@ -44,7 +55,8 @@ function daysBetween(date1, date2) {
  *          isWeekend(new Date("2024-03-18")) → false (понедельник)
  */
 function isWeekend(date) {
-  // твой код здесь
+  var day = date.getDay();
+  return day === 0 || day === 6;
 }
 
 /**
@@ -65,7 +77,25 @@ function addDays(date, n) {
  *   getAge(new Date("2000-06-16")) → 23  (день рождения ещё не наступил)
  */
 function getAge(birthDate) {
-  // твой код здесь
+  var today = new Date();
+
+  var age = today.getFullYear() - birthDate.getFullYear();
+
+  var monthDiff = today.getMonth() - birthDate.getMonth();
+  var dayDiff = today.getDate() - birthDate.getDate();
+
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age--;
+  }
+
+  return age;
 }
 
-module.exports = { getYear, formatDate, daysBetween, isWeekend, addDays, getAge };
+module.exports = {
+  getYear,
+  formatDate,
+  daysBetween,
+  isWeekend,
+  addDays,
+  getAge,
+};

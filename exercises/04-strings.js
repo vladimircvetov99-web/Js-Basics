@@ -72,4 +72,11 @@ function toKebabCase(str) {
   // твой код здесь
 }
 
-module.exports = { capitalize, reverseString, countChar, truncate, isPalindrome, toKebabCase };
+module.exports = {
+  capitalize,
+  reverseString,
+  countChar,
+  truncate,
+  isPalindrome,
+  toKebabCase,
+};

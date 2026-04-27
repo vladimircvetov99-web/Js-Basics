@@ -12,7 +12,11 @@
  *          sum([10, -5, 3])  → 8
  */
 function sum(arr) {
-  // твой код здесь
+  let summa = 0;
+  for (let i = 0; i < arr.length; i++) {
+    summa += arr[i];
+  }
+  return summa;
 }
 
 /**
@@ -23,7 +27,10 @@ function sum(arr) {
  *          getMax([])        → null
  */
 function getMax(arr) {
-  // твой код здесь
+  if (arr.length === 0) {
+    return null;
+  }
+  return Math.max(...arr);
 }
 
 /**
@@ -33,7 +40,16 @@ function getMax(arr) {
  *          filterEven([1, 3, 5])        → []
  */
 function filterEven(arr) {
-  // твой код здесь
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i];
+
+    if (num % 2 === 0) {
+      result.push(num);
+    }
+  }
+  return result;
 }
 
 /**
