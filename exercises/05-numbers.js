@@ -12,7 +12,7 @@
  *          roundTo(5.678, 0)   → 6
  */
 function roundTo(num, decimals) {
-  // твой код здесь
+  return Number(num.toFixed(decimals));
 }
 
 /**
@@ -24,7 +24,15 @@ function roundTo(num, decimals) {
  *          clamp(15, 1, 10) → 10
  */
 function clamp(num, min, max) {
-  // твой код здесь
+  if (num < min) {
+    return min;
+  }
+
+  if (num > max) {
+    return max;
+  }
+
+  return num;
 }
 
 /**
@@ -35,7 +43,7 @@ function clamp(num, min, max) {
  *          isEven(0)  → true
  */
 function isEven(n) {
-  // твой код здесь
+  return n % 2 === 0;
 }
 
 /**
@@ -46,7 +54,13 @@ function isEven(n) {
  *          factorial(5) → 120
  */
 function factorial(n) {
-  // твой код здесь
+  function factorial(n) {
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+      result *= i;
+    }
+    return result;
+  }
 }
 
 /**
@@ -57,7 +71,7 @@ function factorial(n) {
  *          inRange(10, 1, 10) → true
  */
 function inRange(num, min, max) {
-  // твой код здесь
+  return num >= min && num <= max;
 }
 
 /**
@@ -69,7 +83,17 @@ function inRange(num, min, max) {
  *          average([])             → 0
  */
 function average(arr) {
-  // твой код здесь
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum / arr.length;
 }
 
 module.exports = { roundTo, clamp, isEven, factorial, inRange, average };
