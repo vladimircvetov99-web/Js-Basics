@@ -12,7 +12,12 @@
  *          capitalize("")       → ""
  */
 function capitalize(str) {
-  // твой код здесь
+  if (str === "") return "";
+
+  var first = str[0].toUpperCase();
+  var rest = str.slice(1).toLowerCase();
+
+  return first + rest;
 }
 
 /**
@@ -23,7 +28,9 @@ function capitalize(str) {
  *          reverseString("")      → ""
  */
 function reverseString(str) {
-  // твой код здесь
+  function reverseString(str) {
+    return str.split("").reverse().join("");
+  }
 }
 
 /**
@@ -34,7 +41,15 @@ function reverseString(str) {
  *          countChar("hello", "z")  → 0
  */
 function countChar(str, char) {
-  // твой код здесь
+  var count = 0;
+
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] === char) {
+      count++;
+    }
+  }
+
+  return count;
 }
 
 /**
@@ -69,7 +84,7 @@ function isPalindrome(str) {
  *          toKebabCase("Foo Bar Baz")   → "foo-bar-baz"
  */
 function toKebabCase(str) {
-  // твой код здесь
+  return str.toLowerCase().replace(/ /g, "-");
 }
 
 module.exports = {
