@@ -12,7 +12,8 @@
  *          roundTo(5.678, 0)   → 6
  */
 function roundTo(num, decimals) {
-  return Number(num.toFixed(decimals));
+  let power = 10 ** decimals;
+  return Math.round(num * power) / power;
 }
 
 /**
@@ -54,13 +55,12 @@ function isEven(n) {
  *          factorial(5) → 120
  */
 function factorial(n) {
-  function factorial(n) {
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-      result *= i;
-    }
-    return result;
+  let result = 1;
+
+  for (let i = 1; i<=n; i++) {
+    result = result * i;
   }
+  return result;
 }
 
 /**
