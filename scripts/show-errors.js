@@ -14,7 +14,7 @@ const DIM    = '\x1b[2m';
 
 let output;
 try {
-  output = execSync('npx jest --json --silent 2>/dev/null', {
+  output = execSync('npx jest --json --silent 2>nul', {
     cwd: __dirname + '/..',
     encoding: 'utf8',
   });

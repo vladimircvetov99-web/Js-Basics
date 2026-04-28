@@ -28,9 +28,11 @@ function capitalize(str) {
  *          reverseString("")      → ""
  */
 function reverseString(str) {
-  function reverseString(str) {
-    return str.split("").reverse().join("");
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--){
+    reversed += str [i];
   }
+  return reversed;
 }
 
 /**
@@ -61,7 +63,11 @@ function countChar(str, char) {
  *          truncate("Hi", 8)           → "Hi"
  */
 function truncate(str, maxLength) {
-  // твой код здесь
+  if (str.length <= maxLength) {
+    return str ;
+  }
+  return str.slice(0, maxLength - 3) + "...";
+  
 }
 
 /**
@@ -73,7 +79,9 @@ function truncate(str, maxLength) {
  *          isPalindrome("hello")   → false
  */
 function isPalindrome(str) {
-  // твой код здесь
+  const cleanedStr = str.toLowerCase();
+  const reversedStr = cleanedStr.split('').reverse().join('');
+  return cleanedStr === reversedStr;
 }
 
 /**
