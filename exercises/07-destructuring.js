@@ -14,7 +14,7 @@
  *          getFirstAndLast([7])           → { first: 7, last: 7 }
  */
 function getFirstAndLast(arr) {
-  // твой код здесь
+
 }
 
 /**
@@ -25,7 +25,7 @@ function getFirstAndLast(arr) {
  *          swap("a", "b") → ["b", "a"]
  */
 function swap(a, b) {
-  // твой код здесь
+  return [b, a];
 }
 
 /**
