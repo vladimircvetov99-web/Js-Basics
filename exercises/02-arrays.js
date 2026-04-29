@@ -59,7 +59,12 @@ function filterEven(arr) {
  *          doubleAll([])        → []
  */
 function doubleAll(arr) {
-  // твой код здесь
+  let result = [];
+
+  for (let i =0; i <arr.length; i++) {
+    result.push(arr[i] *2);
+  }
+  return result;
 }
 
 /**
@@ -70,7 +75,7 @@ function doubleAll(arr) {
  *          unique([5, 5, 5])        → [5]
  */
 function unique(arr) {
-  // твой код здесь
+  return Array.from(new Set(arr));
 }
 
 /**
@@ -80,7 +85,13 @@ function unique(arr) {
  *          reverseArray([])        → []
  */
 function reverseArray(arr) {
-  // твой код здесь
+  let result = [];
+
+  for (let i = arr.length - 1; i >=0; i--) {
+    result.push(arr[i]);
+  }
+  return result;
 }
+
 
 module.exports = { sum, getMax, filterEven, doubleAll, unique, reverseArray };
