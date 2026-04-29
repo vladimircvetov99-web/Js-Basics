@@ -13,7 +13,7 @@
  */
 function roundTo(num, decimals) {
   let power = 10 ** decimals;
-  return Math.round(num * power) / power;
+  return Math.round((num + Number.EPSILON) * power) / power;
 }
 
 /**
