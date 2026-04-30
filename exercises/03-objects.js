@@ -12,7 +12,11 @@
  *          getName({ age: 25 })       → "Unknown"
  */
 function getName(obj) {
-  // твой код здесь
+  if (obj.name) {
+    return obj.name;
+  } else {
+    return "Unknown";
+  }
 }
 
 /**
@@ -22,7 +26,7 @@ function getName(obj) {
  *          countKeys({})              → 0
  */
 function countKeys(obj) {
-  // твой код здесь
+  return Object.keys(obj).length;
 }
 
 /**
@@ -33,7 +37,8 @@ function countKeys(obj) {
  *          mergeObjects({ a: 1 }, { a: 99, b: 2 }) → { a: 99, b: 2 }
  */
 function mergeObjects(obj1, obj2) {
-  // твой код здесь
+  return {...obj1, ...obj2};
+  // “сложи два объекта, второй важнее”
 }
 
 /**
