@@ -48,7 +48,7 @@ function mergeObjects(obj1, obj2) {
  *          getValues({})                           → []
  */
 function getValues(obj) {
-  // твой код здесь
+  return Object.values(obj);
 }
 
 /**
@@ -59,7 +59,8 @@ function getValues(obj) {
  *          hasProperty({ x: 10 }, "y")  → false
  */
 function hasProperty(obj, key) {
-  // твой код здесь
+  return key in obj;
+  // “есть ли такой ярлык в коробке?”
 }
 
 /**
@@ -71,7 +72,7 @@ function hasProperty(obj, key) {
  *          getCity({})                                → null
  */
 function getCity(obj) {
-  // твой код здесь
+  return obj?.address?.city ?? null;
 }
 
 module.exports = { getName, countKeys, mergeObjects, getValues, hasProperty, getCity };
