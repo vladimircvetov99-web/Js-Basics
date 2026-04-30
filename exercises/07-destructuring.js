@@ -14,7 +14,11 @@
  *          getFirstAndLast([7])           → { first: 7, last: 7 }
  */
 function getFirstAndLast(arr) {
+ let first = arr[0];
+ let last = arr[arr.length - 1];
 
+  return { first, last };
+  
 }
 
 /**
@@ -35,7 +39,8 @@ function swap(a, b) {
  * Примеры: formatPerson({ name: "Alice", age: 30 }) → "Имя: Alice, Возраст: 30"
  */
 function formatPerson({ name, age }) {
-  // твой код здесь
+  return `Имя: ${name}, Возраст: ${age}`;
+  // возьми переменную и вставь в текст
 }
 
 /**
@@ -60,7 +65,12 @@ function withDefaults(options, defaults) {
  *          sumAll()               → 0
  */
 function sumAll(...nums) {
-  // твой код здесь
+  let sum = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+  }
+  return sum;
 }
 
 /**
@@ -70,7 +80,12 @@ function sumAll(...nums) {
  *          mergeArrays([], [1])            → [1]
  */
 function mergeArrays(...arrays) {
-  // твой код здесь
+  let result = [];
+
+  for (let arr of arrays) {
+    result.push(...arr);
+  }
+  return result;
 }
 
 module.exports = { getFirstAndLast, swap, formatPerson, withDefaults, sumAll, mergeArrays };
