@@ -53,7 +53,10 @@ function formatPerson({ name, age }) {
  *     → { color: "red", size: 10 }
  */
 function withDefaults(options, defaults) {
-  // твой код здесь
+  return {
+    ...defaults,
+    ...options
+  };
 }
 
 /**

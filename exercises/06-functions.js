@@ -16,7 +16,9 @@
  *   triple(4)  → 12
  */
 function createMultiplier(n) {
-  // твой код здесь
+  return function(x) {
+    return x * n;
+  };
 }
 
 /**
@@ -27,7 +29,7 @@ function createMultiplier(n) {
  *   applyTwice(x => x * 2, 3)  → 12
  */
 function applyTwice(fn, value) {
-  // твой код здесь
+  return fn(fn(value));
 }
 
 /**
@@ -39,8 +41,12 @@ function applyTwice(fn, value) {
  *   count() → 2
  *   count() → 3
  */
-function createCounter() {
-  // твой код здесь
+function createCounter() { 
+  let x = 1;
+
+ return function() {
+   return x++;
+ }
 }
 
 /**
@@ -53,7 +59,16 @@ function createCounter() {
  *   init() → 42  (fn больше не вызывается)
  */
 function once(fn) {
-  // твой код здесь
+  let called = false;
+  let result;
+
+  return function() {
+    if (!called) {
+      result = fn();
+      called = true;
+    }
+    return result;
+  }
 }
 
 /**
@@ -66,7 +81,9 @@ function once(fn) {
  *   compose(times2, add1)(3)  → 8   // add1(3)=4, times2(4)=8
  */
 function compose(f, g) {
-  // твой код здесь
+  return function(x) {
+    return f(g(x));
+  }
 }
 
 /**
@@ -79,7 +96,9 @@ function compose(f, g) {
  *   add5(10) → 15
  */
 function partial(fn, ...presetArgs) {
-  // твой код здесь
+  return function(...laterArgs) {
+    return fn(...presetArgs, ...laterArgs);
+  }
 }
 
 module.exports = { createMultiplier, applyTwice, createCounter, once, compose, partial };
